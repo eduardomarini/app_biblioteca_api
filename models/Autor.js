@@ -13,4 +13,4 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false, // Desativa os campos createdAt e updatedAt
     });
     return Autor;
-}
+};

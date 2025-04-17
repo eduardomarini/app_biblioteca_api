@@ -25,5 +25,5 @@
         tabelName: 'emprestimos',
         timestamps: false,
     })
-    return Emprestimo
- }
+    return Emprestimo;
+ };
