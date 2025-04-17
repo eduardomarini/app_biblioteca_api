@@ -66,13 +66,13 @@ const LivroController = {
         }
     },
 
-    async BuscarLivroIDAutor(req, res) {
+    async buscarLivroIDAutor(req, res) {
         try {
             const {id_autor} = req.params;
             const livros = await Livro.findAll({where: {id_autor}});
 
             if (livros.length == 0) {
-                return res.status(400).json({error: 'Nenhum livro encontrado para este autor'})
+                return res.status(404).json({error: 'Nenhum livro encontrado para este autor'})
             }
             res.json(livros);
         } catch (error) {
@@ -80,13 +80,13 @@ const LivroController = {
         }
     },
 
-    async BuscarLivroIDCategoria(req, res) {
+    async buscarLivroIDCategoria(req, res) {
         try {
             const {id_categoria} = req.params;
             const livros = await Livro.findAll({where: {id_categoria}})
 
             if(livros.lenght == 0) {
-                return res.status(400).json({error: 'Nenhum livro encontrado para essa categoria'})
+                return res.status(404).json({error: 'Nenhum livro encontrado para essa categoria'})
             }
             res.jsont(livros)
         } catch (error) {
