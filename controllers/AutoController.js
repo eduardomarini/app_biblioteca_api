@@ -36,7 +36,7 @@ const AutorController = { // cria um objeto chamado AutorController, onde vamos 
     async atualizarAutor(req, res) { // função assíncrona, que recebe os parâmetros req -> requisição, res -> resposta
         try {
             const {id} = req.params; // extrai o parâmetro id da URL -> id será usado para procurar o autor no banco
-            const{nome, nacionalidade, data_nascimento} = req.body;
+            const{nome, nacionalidade, data_nascimento} = req.body; // extrai os dados enviados no corpo da requisição JSON
             const autor = await Autor.findByPk(id); // buscar autor pela ID no banco
         
         if(!autor) {
