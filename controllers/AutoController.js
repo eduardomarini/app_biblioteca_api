@@ -39,15 +39,16 @@ const AutorController = { // cria um objeto chamado AutorController, onde vamos 
             const{nome, nacionalidade, data_nascimento} = req.body; // extrai os dados enviados no corpo da requisição JSON
             const autor = await Autor.findByPk(id); // buscar autor pela ID no banco
         
-        if(!autor) {
-            return res.status(404).json({error: 'Autor não encontrado'});
-        } 
-        await autor.update({nome, nacionalidade, data_nascimento}); // se o autor for encontrado, faz o update no banco de dados, método update() modifica os dados direto no banco
-        res.json(autor); // envia como resposta o autor atualizado em formato json
-        } catch (error) { // se ocorre qualquer erro inesperado, responde com o status 500
-            res.status(500).json({error: 'Erro ao atualizar autor' })
-        }
-    },
+            if(!autor) {
+                return res.status(404).json({error: 'Autor não encontrado'});
+            } 
+
+            await autor.update({nome, nacionalidade, data_nascimento}); // se o autor for encontrado, faz o update no banco de dados, método update() modifica os dados direto no banco
+            res.json(autor); // envia como resposta o autor atualizado em formato json
+            } catch (error) { // se ocorre qualquer erro inesperado, responde com o status 500
+                res.status(500).json({error: 'Erro ao atualizar autor' })
+            }
+        },
 
     async excluirAutor(req, res) {
         try {
