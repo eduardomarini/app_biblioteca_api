@@ -1,0 +1,3 @@
+CONTROLLERS -> Cuidam da lógica das requisições HTTP, como listar, criar, editar e deletar
+dados como ta tabela autor, livros, usuario etc.
+Usam os models para acessar o banco e respondem ao cliente com os dados ou mensagens.
