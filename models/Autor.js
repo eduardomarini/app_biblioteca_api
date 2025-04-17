@@ -1,5 +1,5 @@
-module.exports = (sequelize, DataTypes) => {
-    const Autor = sequelize.define('Autor', {
+module.exports = (sequelize, DataTypes) => { // exporta a conexão para que possamos importar em outros arquivos do projeto
+    const Autor = sequelize.define('Autor', { // cria o model chamado 'Autor', irá mapear a tabela 'autores'
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
