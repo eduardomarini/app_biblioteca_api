@@ -10,6 +10,10 @@ router.get('/:id', LivroController.buscarLivroID);
 router.post('/', LivroController.criarLivro);
 // http://localhost:3000/livros
 // O corpo da requisição (req.body) deve conter os dados do novo livro
+router.post('/:id/autor', LivroController.buscarLivroIDAutor);
+//http://localhost:3000/livros/1/autor
+router.post('/:id/categoria', LivroController.buscarLivroIDCategoria);
+//http://localhost:3000/livros/1/categoria
 router.put('/:id', LivroController.atualizarLivro);
 // http://localhost:3000/livros/1
 router.delete('/:id', LivroController.excluirLivro);
